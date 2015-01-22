@@ -17,6 +17,11 @@ var WebSocketService = function(model, webSocket) {
 		if($.cookie('todpole_name'))	{
 			webSocketService.sendMessage('name:'+$.cookie('todpole_name'));
 		}
+
+		if (GLOBAL_NAME != '') {
+			webSocketService.sendMessage('name:'+GLOBAL_NAME);
+		};
+
 	};
 	
 	this.updateHandler = function(data) {

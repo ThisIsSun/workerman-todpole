@@ -14,7 +14,7 @@ if(!function_exists('is_mobile'))
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Workerman小蝌蚪互动聊天室 HTML5+Websocket+PHP多进程socket实时推送技术</title>
+		<title>IM</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />		
     <meta name="apple-mobile-web-app-capable" content="YES">
@@ -33,18 +33,18 @@ if(!function_exists('is_mobile'))
 		
 			<input id="chat" type="text" />
 			<div id="chatText"></div>
-			<h1>workerman</h1>
+			<h1 style="display: none;">workerman</h1>
 		<?php if(!is_mobile()){?>
 			<div id="instructions">
 				<h2>介绍</h2>
 				<p>直接打字聊天!<br />输入 name: XX 则会设置你的昵称为XX</p>
 			</div>
 			<aside id="info">
-			<section id="share">
+			<section id="share" style="display: none;">
 				       <a rel="external" href="http://github.com/walkor/workerman-todpole" title="workerman-todpole at GitHub">源代码：<img src="css/images/github.png" alt="fork on github"></a>
 				       &nbsp;&nbsp;
 			</section>
-			<section id="wtf">
+			<section id="wtf" style="display: none;">
 			
 			    <!-- 尊重他人劳动成果，请保留原作者相关链接 -->
 				<h2>powered&nbsp;by&nbsp;<a rel="external" href="http://workerman.net/workerman-todpole" target="_blank">workerman</a> &nbsp;&nbsp;&nbsp;&nbsp;感谢 <a href="http://rumpetroll.com/" target="_blank">rumpetroll.com</a></h2>
@@ -85,6 +85,10 @@ if(!function_exists('is_mobile'))
 			</div>
 			
 		</div>
+
+        <script>
+			GLOBAL_NAME = '<?php echo $_GET['name']; ?>'
+        </script>
 
 		<script src="/js/lib/parseUri.js"></script> 
 		<script src="/js/lib/modernizr-1.5.min.js"></script>
